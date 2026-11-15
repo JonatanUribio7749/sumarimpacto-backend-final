@@ -1,0 +1,10 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "functions": {
+    "app.js": {
+      "includeFiles": "views/**",
+      "maxDuration": 60
+    }
+  },
+  "installCommand": "npm ci --omit=dev"
+}

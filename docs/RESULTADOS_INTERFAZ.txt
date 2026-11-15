@@ -1,0 +1,1 @@
+UI DOM: login, seis indicadores, cinco pestañas, formulario de gasto, rechazo de sobregiro y chatbot: OK. Sin errores JavaScript. No evalúa layout de navegador.

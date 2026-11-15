@@ -1,0 +1,141 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> sumar-impacto@3.1.0 test
+> node --test tests/*.test.js
+
+✔ FAQ: como me contacto con uds (1.848665ms)
+✔ FAQ: ¿Tienen WhatsApp? (0.237974ms)
+✔ FAQ: Quiero hablar con alguien (0.096584ms)
+✔ FAQ: ¿Cuál es su horario? (0.283252ms)
+✔ FAQ: Quiero donar (1.400287ms)
+✔ FAQ: hola quiero donar (0.963816ms)
+✔ FAQ: gracias, pero como dono (0.152918ms)
+✔ FAQ: ¿Cómo registro una donación? (0.168771ms)
+✔ FAQ: ¿Puedo donar sin elegir proyecto? (0.187099ms)
+✔ FAQ: ¿Cómo asignar una donación? (1.952039ms)
+✔ FAQ: No me deja registrar un gasto (3.346837ms)
+✔ FAQ: El gasto supera el saldo (0.085076ms)
+✔ FAQ: ¿Cómo registro un gasto? (0.054982ms)
+✔ FAQ: ¿Por qué no puedo modificar una donación? (0.024006ms)
+✔ FAQ: ¿Cómo elimino un proyecto? (0.017917ms)
+✔ FAQ: Quiero borrar un gasto (0.021873ms)
+✔ FAQ: ¿Qué diferencia hay entre recibido y asignado? (0.076795ms)
+✔ FAQ: ¿Cuál es el saldo global? (0.06028ms)
+✔ FAQ: ¿Cuál es el monto mínimo? (0.066379ms)
+✔ FAQ: ¿Puedo pagar con tarjeta? (0.065518ms)
+✔ FAQ: ¿Emiten un comprobante? (0.063174ms)
+✔ FAQ: ¿En qué se utiliza mi aporte? (0.062353ms)
+✔ FAQ: ¿Qué puede hacer cada rol? (0.060891ms)
+✔ FAQ: Me devuelve 403 (0.049373ms)
+✔ FAQ: No puedo iniciar sesión (0.060731ms)
+✔ FAQ: Los datos se pierden al cerrar (0.059499ms)
+✔ FAQ: ¿Cómo creo un proyecto? (0.066319ms)
+✔ FAQ: ¿Cómo registro una organización? (0.05348ms)
+✔ FAQ: ¿Cómo creo un donante? (0.06716ms)
+✔ FAQ: Quiero colaborar con ropa (0.059459ms)
+✔ FAQ: ¿Cómo protegen mis datos personales? (0.062002ms)
+✔ FAQ: ¿Cómo ejecuto las pruebas? (0.077525ms)
+✔ FAQ: Necesito ayuda con el panel (0.07398ms)
+✔ FAQ: ¿Qué es SumarImpacto? (0.062473ms)
+✔ FAQ: Hola (0.061241ms)
+✔ FAQ: Gracias (0.069204ms)
+✔ FAQ: ¿Cuánto queda? (0.052889ms)
+✔ FAQ: ¿Qué proyectos tienen? (0.129733ms)
+✔ FAQ: Quiero modificar algo (0.206037ms)
+✔ FAQ: ¿Cuál es la capital de Japón? (0.143474ms)
+✔ Seguimiento de tema sin almacenar conversación (0.176032ms)
+✔ Contacto solo utiliza datos configurados (0.244995ms)
+✔ No confirma cobros ni inventa saldo actual (0.155752ms)
+✔ Dos procesos comparten protección financiera y rollback MongoDB (1346.616666ms)
+[2026-11-15T04:03:13.396Z] GET /api/proyectos
+[2026-11-15T04:03:13.403Z] POST /api/auth/login
+[2026-11-15T04:03:13.438Z] POST /api/auth/login
+[2026-11-15T04:03:13.471Z] GET /
+[2026-11-15T04:03:13.503Z] POST /api/organizaciones
+[2026-11-15T04:03:13.514Z] GET /api/organizaciones
+[2026-11-15T04:03:13.521Z] POST /api/donantes
+[2026-11-15T04:03:13.527Z] GET /api/donantes
+[2026-11-15T04:03:13.532Z] POST /api/proyectos
+[2026-11-15T04:03:13.539Z] POST /api/proyectos
+[2026-11-15T04:03:13.543Z] POST /api/proyectos
+[2026-11-15T04:03:13.547Z] POST /api/proyectos
+[2026-11-15T04:03:13.550Z] GET /api/proyectos/6af92f01e852b74b6ad694aa
+[2026-11-15T04:03:13.554Z] GET /api/proyectos/6af92f01e852b74b6ad694b4
+[2026-11-15T04:03:13.557Z] GET /api/proyectos/id-malformado
+[2026-11-15T04:03:13.560Z] GET /api/proyectos?organizacion_id=6af92f01e852b74b6ad6949f
+[2026-11-15T04:03:13.564Z] POST /api/donaciones
+[2026-11-15T04:03:13.572Z] POST /api/gastos
+[2026-11-15T04:03:13.574Z] POST /api/donaciones
+[2026-11-15T04:03:13.580Z] GET /api/proyectos/6af92f01e852b74b6ad694aa/saldo
+[2026-11-15T04:03:13.585Z] POST /api/gastos
+[2026-11-15T04:03:13.591Z] GET /api/proyectos/6af92f01e852b74b6ad694aa/saldo
+[2026-11-15T04:03:13.595Z] POST /api/gastos
+[2026-11-15T04:03:13.600Z] GET /api/proyectos/6af92f01e852b74b6ad694aa/saldo
+[2026-11-15T04:03:13.603Z] PUT /api/donaciones/6af92f01e852b74b6ad694c5
+[2026-11-15T04:03:13.608Z] POST /api/proyectos
+[2026-11-15T04:03:13.612Z] POST /api/donaciones
+[2026-11-15T04:03:13.617Z] PUT /api/donaciones/6af92f01e852b74b6ad694eb
+[2026-11-15T04:03:13.624Z] PUT /api/proyectos/6af92f01e852b74b6ad694e5
+[2026-11-15T04:03:13.626Z] PUT /api/donaciones/6af92f01e852b74b6ad694eb
+[2026-11-15T04:03:13.627Z] DELETE /api/proyectos/6af92f01e852b74b6ad694aa
+[2026-11-15T04:03:13.632Z] DELETE /api/proyectos/6af92f01e852b74b6ad694e5
+[2026-11-15T04:03:13.637Z] GET /api/proyectos/6af92f01e852b74b6ad694aa/donaciones
+[2026-11-15T04:03:13.639Z] GET /api/proyectos/6af92f01e852b74b6ad694aa/gastos
+[2026-11-15T04:03:13.642Z] POST /api/proyectos
+[2026-11-15T04:03:13.662Z] DELETE /api/proyectos/6af92f01e852b74b6ad6950a
+[2026-11-15T04:03:13.671Z] POST /api/donantes
+[2026-11-15T04:03:13.674Z] POST /api/proyectos
+[2026-11-15T04:03:13.678Z] POST /api/donaciones
+[2026-11-15T04:03:13.684Z] POST /api/gastos
+[2026-11-15T04:03:13.684Z] POST /api/gastos
+[2026-11-15T04:03:13.697Z] GET /api/proyectos/6af92f01e852b74b6ad69516/saldo
+[2026-11-15T04:03:13.701Z] GET /api/resumen
+[2026-11-15T04:03:13.704Z] POST /api/donaciones
+[2026-11-15T04:03:13.706Z] POST /api/donaciones
+[2026-11-15T04:03:13.707Z] POST /api/donaciones
+[2026-11-15T04:03:13.709Z] POST /api/donaciones
+[2026-11-15T04:03:13.710Z] POST /api/donaciones
+[2026-11-15T04:03:13.712Z] POST /api/donaciones
+[2026-11-15T04:03:13.714Z] POST /api/donantes
+[2026-11-15T04:03:13.716Z] POST /api/organizaciones
+[2026-11-15T04:03:13.718Z] POST /api/gastos
+[2026-11-15T04:03:13.718Z] POST /api/gastos
+[2026-11-15T04:03:13.750Z] POST /api/auth/login
+[2026-11-15T04:03:13.776Z] GET /api/proyectos
+[2026-11-15T04:03:13.779Z] DELETE /api/proyectos/6af92f01e852b74b6ad694aa
+[2026-11-15T04:03:13.782Z] PUT /api/donaciones/6af92f01e852b74b6ad694c5
+[2026-11-15T04:03:13.784Z] POST /api/donantes
+[2026-11-15T04:03:13.816Z] POST /api/auth/login
+[2026-11-15T04:03:13.840Z] GET /api/proyectos
+[2026-11-15T04:03:13.844Z] DELETE /api/proyectos/6af92f01e852b74b6ad694aa
+[2026-11-15T04:03:13.846Z] PUT /api/donaciones/6af92f01e852b74b6ad694c5
+[2026-11-15T04:03:13.847Z] POST /api/donantes
+[2026-11-15T04:03:13.851Z] POST /api/chat
+[2026-11-15T04:03:13.853Z] POST /api/chat
+[2026-11-15T04:03:13.854Z] POST /api/chat
+[2026-11-15T04:03:13.855Z] POST /api/chat
+[2026-11-15T04:03:13.856Z] POST /api/chat
+[2026-11-15T04:03:13.857Z] POST /api/chat
+[2026-11-15T04:03:13.858Z] GET /api/auth/me
+[2026-11-15T04:03:13.860Z] GET /health
+[2026-11-15T04:03:13.861Z] GET /api/ruta-inexistente
+[2026-11-15T04:03:13.863Z] POST /api/auth/logout
+[2026-11-15T04:03:13.864Z] GET /api/proyectos
+✔ API MongoDB conserva reglas, relaciones y respuestas HTTP (1245.854657ms)
+[2026-11-15T04:03:13.009Z] GET /
+[2026-11-15T04:03:13.069Z] GET /app.js
+[2026-11-15T04:03:13.072Z] GET /styles.css
+[2026-11-15T04:03:13.074Z] POST /api/chat
+[2026-11-15T04:03:13.081Z] GET /health
+[2026-11-15T04:03:13.083Z] POST /api/auth/login
+✔ Página, archivos públicos y FAQ funcionan sin base ni credenciales (88.037044ms)
+✔ Entorno de producción exige secreto y origen HTTPS exacto (0.542088ms)
+✔ Configuración Vercel incluye vistas y omite dependencias de desarrollo (0.230874ms)
+ℹ tests 48
+ℹ suites 0
+ℹ pass 48
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1699.70045

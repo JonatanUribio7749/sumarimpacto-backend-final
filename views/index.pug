@@ -1,0 +1,74 @@
+doctype html
+html(lang="es")
+ head
+  meta(charset="utf-8")
+  meta(name="viewport" content="width=device-width, initial-scale=1")
+  title SumarImpacto | Gestión solidaria
+  link(rel="stylesheet" href="/styles.css")
+  script(src="/app.js" defer)
+ body
+  header
+   a.brand(href="/") SumarImpacto
+   span.tag Proyecto académico · Grupo 34
+   button#logout.hidden(type="button") Cerrar sesión
+  main
+   section#intro.hero
+    p.eyebrow CADA APORTE TIENE UN DESTINO
+    h1 Más claridad. Más impacto.
+    p Gestioná proyectos sociales, registrá aportes y conocé el recorrido de cada fondo.
+   section#login.card
+    h2 Ingresar al panel
+    p Acceso para el equipo de gestión. Datos de demostración ficticios.
+    form#loginForm
+     label Email
+      input(type="email" name="email" required autocomplete="username")
+     label Contraseña
+      input(type="password" name="clave" required autocomplete="current-password")
+     button(type="submit") Iniciar sesión
+   p#notice(role="status" aria-live="polite")
+   section#panel.hidden
+    .section-title
+     div
+      p.eyebrow PANEL DE GESTIÓN
+      h1 Tu comunidad, en movimiento
+      p#identity
+     button#refresh(type="button") Actualizar
+    #stats.stats
+    nav#tabs(aria-label="Secciones del panel")
+     each title, key in {proyectos:'Proyectos',organizaciones:'Organizaciones',donantes:'Donantes',donaciones:'Donaciones',gastos:'Gastos'}
+      button(type="button" data-tab=key)= title
+    .workspace
+     section.card
+      h2#listTitle Proyectos
+      label Filtrar por organización
+       select#filter
+        option(value="") Todas las organizaciones
+      #records
+     section#editor.card
+      h2#formTitle Nuevo proyecto
+      p#formHelp
+      form#entityForm
+       #fields
+       .actions
+        button(type="submit") Guardar
+        button#cancel(type="button") Nuevo / cancelar
+    section#detail.card.hidden
+     h2 Detalle del proyecto
+     #detailContent
+  button#chatToggle(type="button" aria-expanded="false" aria-controls="chat") ¿Cómo puedo ayudar?
+  aside#chat.card.hidden(aria-label="Asistente de SumarImpacto")
+   .section-title
+    h2 Asistente
+    button#chatClose(type="button" aria-label="Cerrar asistente") Cerrar
+   p Preguntas frecuentes de SumarImpacto. No procesa pagos.
+   #messages(role="log" aria-live="polite")
+    p.bot ¡Hola! Puedo orientarte para colaborar o ayudarte con el panel. ¿Qué necesitás?
+   #chatSuggestions.quick
+    each q in ['¿Cómo puedo donar?','¿Cómo me contacto con ustedes?','Necesito ayuda con el panel']
+     button(type="button" data-question=q)= q
+   button#chatReset.secondary(type="button") Reiniciar conversación
+   form#chatForm
+    label Tu consulta
+     input(name="mensaje" maxlength="500" required autocomplete="off")
+    button(type="submit") Enviar
+  footer SumarImpacto · Desarrollo Web Backend · Jonatan Emanuel Uribio · 2026

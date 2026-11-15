@@ -1,0 +1,268 @@
+{
+  "info": {
+    "name": "SumarImpacto TP3 Grupo34",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000"
+    },
+    {
+      "key": "email",
+      "value": "admin@example.org"
+    },
+    {
+      "key": "clave",
+      "value": "REEMPLAZAR_EN_POSTMAN"
+    }
+  ],
+  "item": [
+    {
+      "name": "01 Login (editar email y clave)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/auth/login",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"{{email}}\",\n  \"clave\": \"{{clave}}\"\n}"
+        }
+      }
+    },
+    {
+      "name": "02 Crear organización",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/organizaciones",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombre\": \"Organización Postman\",\n  \"descripcion\": \"Prueba ficticia\",\n  \"contacto\": \"test@example.org\"\n}"
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "if(pm.response.code===201) pm.collectionVariables.set('organizacion',pm.response.json()._id);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "03 Crear donante",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/donantes",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombre\": \"Donante Postman\",\n  \"email\": \"test@example.org\"\n}"
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "if(pm.response.code===201) pm.collectionVariables.set('donante',pm.response.json()._id);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "04 Crear proyecto",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/proyectos",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombre\": \"Proyecto Postman\",\n  \"descripcion\": \"Prueba de reglas\",\n  \"organizacion_id\": \"{{organizacion}}\"\n}"
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "if(pm.response.code===201) pm.collectionVariables.set('proyecto',pm.response.json()._id);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "05 Donar 50",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/donaciones",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"donante_id\": \"{{donante}}\",\n  \"proyecto_id\": \"{{proyecto}}\",\n  \"monto\": 50\n}"
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "if(pm.response.code===201) pm.collectionVariables.set('donacion',pm.response.json()._id);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "06 Gastar 30",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/gastos",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"proyecto_id\": \"{{proyecto}}\",\n  \"concepto\": \"Materiales\",\n  \"monto\": 30\n}"
+        }
+      }
+    },
+    {
+      "name": "07 Consultar saldo 20",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/proyectos/{{proyecto}}/saldo"
+      }
+    },
+    {
+      "name": "08 Rechazar gasto 25 (400)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/gastos",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"proyecto_id\": \"{{proyecto}}\",\n  \"concepto\": \"Exceso\",\n  \"monto\": 25\n}"
+        }
+      }
+    },
+    {
+      "name": "09 Bloquear edición donación (400)",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/donaciones/{{donacion}}",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"monto\": 60\n}"
+        }
+      }
+    },
+    {
+      "name": "10 Bloquear borrado proyecto (400)",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": "{{baseUrl}}/api/proyectos/{{proyecto}}"
+      }
+    },
+    {
+      "name": "11 Resumen",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/resumen"
+      }
+    },
+    {
+      "name": "12 Asistente público",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/chat",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"mensaje\": \"Quiero donar\"\n}"
+        }
+      }
+    },
+    {
+      "name": "13 Logout",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/auth/logout",
+        "body": {
+          "mode": "raw",
+          "raw": "{}"
+        }
+      }
+    },
+    {
+      "name": "14 Rechazar sin sesión (401)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/proyectos"
+      }
+    }
+  ]
+}
