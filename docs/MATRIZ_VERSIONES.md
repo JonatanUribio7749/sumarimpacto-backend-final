@@ -1,5 +1,5 @@
 # Evolución y matriz de tecnologías · Grupo 34
-Tercera entrega: Jonatan Emanuel Uribio. Fecha de preparación: 14/11/2026.
+Tercera entrega: Jonatan Emanuel Uribio. Fecha de preparación: Semana del 02/11/2026 a la actualidad.
 
 La entrega 1 cumplió las bases de la materia con gestión de personas. No era una implementación de SumarImpacto. La entrega 2 adoptó el caso 5, con donaciones y gastos; por eso no se presenta como una migración de personas a donantes ni se importan esos datos. La tercera continúa el código real de SumarImpacto.
 
@@ -24,7 +24,7 @@ La entrega 1 cumplió las bases de la materia con gestión de personas. No era u
 - Commit recuperado: 1a65621eabdeb36b0794453443da0e2725fdfe92
 - V2: https://github.com/JonatanUribio7749/sumarimpacto-backend.git
 - Commit recuperado: eceb749597d4546d48cd66fe8f576a11fce5a671
-- Las carpetas son copias de los repositorios consultados el 14/11/2026 (Argentina); no demuestran por sí solas qué commit se entregó originalmente. Los PDF aportados se conservan aparte.
+- Las carpetas son copias de los repositorios consultados en las ultimas semanas (Argentina); no demuestran por sí solas qué commit se entregó originalmente. Los PDF aportados se conservan aparte.
 - Los nombres 1.0/2.0/3.0 organizan la entrega; el package.json histórico V2 declara 1.1.0. No se altera ese dato.
 
 ## Correcciones de la devolución de segunda entrega
